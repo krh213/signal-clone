@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Signal Clone — démo pédagogique</title>
+  <style>
+    body { font-family: sans-serif; max-width: 480px; margin: 40px auto; }
+    input, button { padding: 8px; margin: 4px 0; width: 100%; box-sizing: border-box; }
+    #log { list-style: none; padding: 0; border: 1px solid #ccc; height: 200px; overflow-y: auto; padding: 8px; }
+    #log li { margin-bottom: 4px; }
+  </style>
+</head>
+<body>
+  <h1>Messagerie chiffrée (Signal Protocol)</h1>
+
+  <h3>1. Inscription</h3>
+  <input id="username" placeholder="Votre pseudo" />
+  <button id="registerBtn">Générer mes clés et m'inscrire</button>
+
+  <h3>2. Envoyer un message</h3>
+  <input id="target" placeholder="Pseudo du destinataire" />
+  <input id="message" placeholder="Votre message" />
+  <button id="sendBtn">Envoyer (chiffré)</button>
+
+  <h3>Journal</h3>
+  <ul id="log"></ul>
+
+  <!-- bundle.js = résultat du build webpack (voir instructions) -->
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="bundle.js"></script>
+</body>
+</html>
